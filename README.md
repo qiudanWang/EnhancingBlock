@@ -35,11 +35,6 @@ python test.py
    --artist vincent-van-gogh
 ```
 
-This is an example of modifying the value of lamda:
-
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure1.png)
-
-
 ### Some Other Options:
 
 --crop: If crop the input images.
@@ -57,5 +52,9 @@ This is an example of modifying the value of lamda:
 --normal_vector: File path to the normal vector.
 
 --constant: File path to the constant.
+
+This is an example of modifying the value of lamda:
+
+![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure1.png)
 
 ## Train
