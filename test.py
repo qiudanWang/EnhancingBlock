@@ -45,9 +45,7 @@ def style_transfer(vgg, decoder, content, style, normal_vector, constant, lamda=
     distance = torch.mm(feat.reshape(1, 524288), torch.transpose(normal_vector, 1, 0)) + constant
 
     if (distance > 0):
-      feat = feat * alpha + lamda * distance  * normal_vector.reshape(1, 512, 32, 32)
-    else:
-      feat = feat * alpha
+      feat = feat + lamda * distance  * normal_vector.reshape(1, 512, 32, 32)
 
     res = decoder(feat)
 
@@ -160,7 +158,7 @@ for content_path in content_paths:
         content = content.to(device)
         with torch.no_grad():
             output = style_transfer(vgg, decoder, content, style,
-                                    args.alpha, interpolation_weights)
+                                    args.lamda, interpolation_weights)
         output = output.cpu()
         output_name = output_dir / '{:s}_interpolation{:s}'.format(
             content_path.stem, args.save_ext)
@@ -176,7 +174,7 @@ for content_path in content_paths:
             content = content.to(device).unsqueeze(0)
             with torch.no_grad():
                 output = style_transfer(vgg, decoder, content, style, normal_vector, constant,
-                                        args.alpha)
+                                        args.lamda)
             output = output.cpu()
 
             output_name = output_dir / '{:s}_{:s}_stylized_{:s}{:s}'.format(
