@@ -21,7 +21,26 @@ Download xxxxx and put them under models/.
 ## Test
 Use --content and --style to provide the respective path to the content and style image.
 
-This is an example:
+#!/bin/sh
+
+data_dir="./data"
+
+style_name=vincent-van-gogh
+
+python test.py \
+   --lamda 1 \
+   --content_size 256 \
+   --style_size 256 \
+   --crop \
+   --content ${data_dir}/content \
+   --style ${data_dir}/style/${style_name} \
+   --output ${data_dir}/output/${style_name} \
+   --decoder models/decoder_iter_160000.pth \
+   --normal_vector  data/boundary/${style_name}/boundary.npy \
+   --constant data/boundary/${style_name}/constant.npy \
+   --artist ${style_name} > logs/${style_name}.log 
+
+This is an example of modifying the value of lamda:
 
 
 ### Some Other Options:
@@ -30,7 +49,7 @@ This is an example:
 
 --style_size: New (minimum) size for the content image. Keeping the original size if set to 0.
 
---alpha: Adjust the degree of stylization. It should be a value between 0.0 and 1.0 (default).
+--lamda: Adjust the degree of stylization. It should be a value between 0.0 and 1.0 (default).
 
 --preserve_color: Preserve the color of the content image.
 
