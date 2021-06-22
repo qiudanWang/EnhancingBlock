@@ -13,7 +13,7 @@ import net
 from function import adaptive_instance_normalization, coral
 
 
-def test_transform(size, crop):
+def img_transform(size, crop):
     transform_list = []
     if size != 0:
         transform_list.append(transforms.Resize(size))
@@ -146,8 +146,8 @@ vgg = nn.Sequential(*list(vgg.children())[:31])
 vgg.to(device)
 decoder.to(device)
 
-content_tf = test_transform(args.content_size, args.crop)
-style_tf = test_transform(args.style_size, args.crop)
+content_tf = img_transform(args.content_size, args.crop)
+style_tf = img_transform(args.style_size, args.crop)
 
 normal_vector = torch.from_numpy(np.load(args.normal_vector)).to(device)
 constant = torch.from_numpy(np.load(args.constant)).to(device)
