@@ -24,10 +24,9 @@ def img_transform(size, crop):
     return transform
 
 
-def style_transfer(vgg, decoder, content, style, normal_vector, constant, alpha=1.0,
+def style_transfer(vgg, decoder, content, style, normal_vector, constant, lamda=1.0,
                    interpolation_weights=None):
-    assert (0.0 <= alpha <= 1.0)
-
+    
     content_f = vgg(content)
 
     style_f = vgg(style)
@@ -46,9 +45,9 @@ def style_transfer(vgg, decoder, content, style, normal_vector, constant, alpha=
     distance = torch.mm(feat.reshape(1, 524288), torch.transpose(normal_vector, 1, 0)) + constant
 
     if (distance > 0):
-      feat = feat * alpha + content_f * (1 - alpha) + distance  * normal_vector.reshape(1, 512, 32, 32)
+      feat = feat * alpha + lamda * distance  * normal_vector.reshape(1, 512, 32, 32)
     else:
-      feat = feat * alpha + content_f * (1 - alpha)
+      feat = feat * alpha
 
     res = decoder(feat)
 
@@ -87,7 +86,7 @@ parser.add_argument('--output', type=str, default='output',
 # Advanced options
 parser.add_argument('--preserve_color', action='store_true',
                     help='If specified, preserve color of the content image')
-parser.add_argument('--alpha', type=float, default=1.0,
+parser.add_argument('--lamda', type=float, default=1.0,
                     help='The weight that controls the degree of \
                              stylization. Should be between 0 and 1')
 parser.add_argument(
