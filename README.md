@@ -12,3 +12,10 @@ TorchVision
 tqdm
 
 # Usage
+## Download models
+Download xxxxx and put them under models/.
+Download xxxxx and put them under data/.
+
+## Test
+
+## Train
