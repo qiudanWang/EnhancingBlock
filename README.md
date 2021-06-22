@@ -12,9 +12,11 @@ TorchVision
 tqdm
 
 # Usage
+## Download data
+Download xxxxx and put them under data/.
+
 ## Download models
 Download xxxxx and put them under models/.
-Download xxxxx and put them under data/.
 
 ## Test
 Use --content and --style to provide the respective path to the content and style image.
