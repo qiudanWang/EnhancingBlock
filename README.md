@@ -21,24 +21,20 @@ Download xxxxx and put them under models/.
 ## Test
 Use --content and --style to provide the respective path to the content and style image.
 
-#!/bin/sh
-
-data_dir="./data"
-
-style_name=vincent-van-gogh
-
+```
 python test.py \
    --lamda 1 \
    --content_size 256 \
    --style_size 256 \
    --crop \
-   --content ${data_dir}/content \
-   --style ${data_dir}/style/${style_name} \
-   --output ${data_dir}/output/${style_name} \
+   --content data/content \
+   --style data/style/vincent-van-gogh \
+   --output data/output/vincent-van-gogh \
    --decoder models/decoder_iter_160000.pth \
-   --normal_vector  data/boundary/${style_name}/boundary.npy \
-   --constant data/boundary/${style_name}/constant.npy \
-   --artist ${style_name} > logs/${style_name}.log 
+   --normal_vector data/boundary/vincent-van-gogh/boundary.npy \
+   --constant data/boundary/vincent-van-gogh/constant.npy \
+   --artist vincent-van-gogh > logs/vincent-van-gogh.log 
+```
 
 This is an example of modifying the value of lamda:
 
