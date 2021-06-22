@@ -19,14 +19,13 @@ Download xxxxx and put them under data/.
 Download xxxxx and put them under models/.
 
 ## Test
-Use --content and --style to provide the respective path to the content and style image.
+Use --content and --style to provide the respective path to the content and style image directory.
 
 ```
 python test.py \
-   --lamda 1 \
+   --lamda 1.0 \
    --content_size 256 \
    --style_size 256 \
-   --crop \
    --content data/content \
    --style data/style/vincent-van-gogh \
    --output data/output/vincent-van-gogh \
