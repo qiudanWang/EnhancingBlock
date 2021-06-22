@@ -37,6 +37,8 @@ python test.py
 
 This is an example of modifying the value of lamda:
 
+![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure1.png)
+
 
 ### Some Other Options:
 
