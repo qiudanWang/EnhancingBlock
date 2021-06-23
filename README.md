@@ -83,6 +83,3 @@ python feat_boundary.py
 ## Evaluation
 In stylization assessment, we use the [deception rate](https://github.com/CompVis/adaptive-style-transfer/tree/master/evaluation) to categorize styles and use its output score as the probability of the stylized output being classified into the target style; In content assessment, we use [content retention](https://github.com/tensorflow/models/tree/v1.12.0/research/slim) to categorize contents and use its content retention to indicate the retention of the content. 
 
-
-
-
