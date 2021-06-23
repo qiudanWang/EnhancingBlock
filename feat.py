@@ -8,7 +8,7 @@ from torchvision import transforms
 
 import net
 
-def style_transform():
+def img_transform():
     transform_list = [
         transforms.Resize(size=(512, 512)),
         transforms.RandomCrop(256),
@@ -33,21 +33,21 @@ vgg.load_state_dict(torch.load("./models/vgg_normalised.pth"))
 vgg = nn.Sequential(*list(vgg.children())[:31])
 network = net.Net(vgg, decoder)
 
-style_dir = Path(args.style_dir)
-style_paths = [f for f in style_dir.glob('*')]
-style_tf = style_transform()
-print("Number of style images: %d" % len(style_paths))
+content_dir = Path(args.content_dir)
+content_paths = [f for f in content_dir.glob('*')]
+content_tf = img_transform()
+print("Number of style images: %d" % len(content_paths))
 
 output_dir = Path(args.output_dir)
 output_dir.mkdir(exist_ok=True, parents=True)
 
-for style_path in style_paths:
+for content_path in content_paths:
     print("handle image: %s" % style_path.name)
-    style = style_tf(Image.open(str(style_path)))
-    style = style.to(device).unsqueeze(0)
-    style_feats = network.encode_with_intermediate(style)
+    content = content_tf(Image.open(str(content_path)))
+    content = content.to(device).unsqueeze(0)
+    content_feats = network.encode_with_intermediate(content)
 
     output_name = style_path.name.replace(".jpg", ".pth")
     output_file = output_dir / output_name
-    torch.save(style_feats[-1], output_file)
+    torch.save(content_feats[-1], output_file)
 
