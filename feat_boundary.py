@@ -50,10 +50,6 @@ print(latent_code_arr.shape)
 
 chosen_num_or_ratio = positive_num / len(latent_code_arr)
 
-print("+++++++++++++++++=")
-print(positive_num)
-print('chosen_num_or_ratio: %f' % chosen_num_or_ratio)
-
 boundary, constant, a, b = train_boundary(
     latent_codes=latent_code_arr,
     chosen_num_or_ratio=chosen_num_or_ratio,
@@ -61,8 +57,6 @@ boundary, constant, a, b = train_boundary(
 
 np.save(style_dir / style_name / 'boundary.npy', boundary)
 np.save(style_dir / style_name / 'constant.npy', constant)
-np.save(style_dir / style_name / 'a.npy', a)
-np.save(style_dir / style_name / 'b.npy', b)
 
 print(boundary)
 print(constant)
