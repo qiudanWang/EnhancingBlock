@@ -18,7 +18,7 @@ def img_transform():
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--content_dir", type=str, required=True,
-                    help="directory of the style images")
+                    help="directory of the content images")
 parser.add_argument("--output_dir", type=str, required=True,
                     help="directory of the output latent code")
 parser.add_argument('--vgg', type=str, required=False,
@@ -47,7 +47,7 @@ for content_path in content_paths:
     content = content.to(device).unsqueeze(0)
     content_feats = network.encode_with_intermediate(content)
 
-    output_name = style_path.name.replace(".jpg", ".pth")
+    output_name = content_path.name.replace(".jpg", ".pth")
     output_file = output_dir / output_name
     torch.save(content_feats[-1], output_file)
 
