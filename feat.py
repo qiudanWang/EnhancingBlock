@@ -17,7 +17,7 @@ def style_transform():
     return transforms.Compose(transform_list)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--img_dir", type=str, required=True,
+parser.add_argument("--content_dir", type=str, required=True,
                     help="directory of the style images")
 parser.add_argument("--output_dir", type=str, required=True,
                     help="directory of the output latent code")
