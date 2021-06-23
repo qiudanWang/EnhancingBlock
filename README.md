@@ -72,4 +72,14 @@ python feat.py
 ```
 
 ### Step two: feed latent representations into SVM classifiers
+Use --style_dir and --content_dir to provide the respective directory to the positive and negative samples.
+```
+python feat_boundary.py 
+  --artist vincent-van-gogh 
+  --style_dir data/boundary/vincent-van-gogh/
+  --content_dir data/boundary/real_images/
+```
+
+## Evaluation
+
 
