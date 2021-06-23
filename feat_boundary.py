@@ -1,4 +1,4 @@
-import argparse
+import argparse                                                                                                                                                                                                                               
 from pathlib import Path
 
 import numpy as np
@@ -13,20 +13,23 @@ def load_latent_code(file, index, dim):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--style_dir", type=str, required=False, default="data/boundary",
+parser.add_argument("--style_dir", type=str, required=True,
                     help="directory of the style images which includes feature map directory named feat_map")
-parser.add_argument("--style_name", type=str, required=False, default="monet_water-lilies-1914",
+parser.add_argument("--content_dir", type=str, required=False, default="data/boundary/real_images/",
+                    help="directory of the content images which includes feature map directory named feat_map")
+parser.add_argument("--artist", type=str, required=True, 
                     help="name of the style to train boundary with svm")
 args = parser.parse_args()
 
 style_dir = Path(args.style_dir)
-style_name = args.style_name
+content_dir = Path(args.content_dir)
+artist = args.artist
 
 latent_code_arr = []
 scores = None
 positive_num = 0
 
-for style_path in [ style_dir / style_name, "data/boundary/real_images/" ]:
+for style_path in [ style_dir , content_dir]:
     print("Process %s" % style_path)
     style_path = Path(style_path)
     latent_code_dir = style_path / 'images' / 'feat_map'
@@ -54,9 +57,8 @@ boundary, constant, a, b = train_boundary(
     chosen_num_or_ratio=chosen_num_or_ratio,
     scores=scores)
 
-np.save(style_dir / style_name / 'boundary.npy', boundary)
-np.save(style_dir / style_name / 'constant.npy', constant)
+np.save(style_dir /  artist / 'boundary.npy', boundary)
+np.save(style_dir /  artist / 'constant.npy', constant)
 
 print(boundary)
 print(constant)
-
