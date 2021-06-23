@@ -58,3 +58,18 @@ This is an example of modifying the value of lamda:
 ![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure1.png)
 
 ## Train
+
+### Step one: extract images' latent representations
+Use --image_dir and --output_dir to provide the respective directory to the images and outputs.
+
+```
+rm -rf data/boundary/vincent-van-gogh/images/list.txt
+rm -rf data/boundary/vincent-van-gogh/images/feat_map
+
+python feat.py
+  --style_dir data/boundary/vincent-van-gogh/images/ 
+  --output_dir data/boundary/vincent-van-gogh/images/feat_map/
+```
+
+### Step two: feed latent representations into SVM classifiers
+
