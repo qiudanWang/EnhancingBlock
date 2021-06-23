@@ -17,10 +17,12 @@ def style_transform():
     return transforms.Compose(transform_list)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--style_dir", type=str, required=False,
-                    help="directory of the style images", default="./data/monet_water-lilies-1914/images")
-parser.add_argument("--output_dir", type=str, required=False,
-                    help="directory of the output latent code", default="./data/monet_water-lilies-1914/feat_map")
+parser.add_argument("--img_dir", type=str, required=True,
+                    help="directory of the style images")
+parser.add_argument("--output_dir", type=str, required=True,
+                    help="directory of the output latent code")
+parser.add_argument('--vgg', type=str, required=False,
+                    default='models/vgg_normalised.pth')
 args = parser.parse_args()
 
 device = torch.device("cpu")
