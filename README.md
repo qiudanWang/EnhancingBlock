@@ -1,7 +1,7 @@
 # pytorch-LMLR
 This is an official pytorch implementation of a paper, LMLR: Manipulating Image StyleTransformation via Latent-Space SVM. 
 
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure0.png)
+![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure0.png)
 
 # Requirements
 Please install requirements by pip install -r requirements.txt
@@ -55,7 +55,7 @@ python test.py
 
 This is an example of modifying the value of lamda:
 
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure1.png)
+![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure1.png)
 
 ## Train
 
