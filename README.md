@@ -80,18 +80,8 @@ python feat_boundary.py
   --content_dir data/boundary/real_images/
 ```
 
-This is the result of training SVM classifiers of different artists:
-
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure2.png)
-
 ## Evaluation
 In stylization assessment, we use the [deception rate](https://github.com/CompVis/adaptive-style-transfer/tree/master/evaluation) to categorize styles and use its output score as the probability of the stylized output being classified into the target style; In Content assessment, we use [content retention](https://github.com/tensorflow/models/tree/v1.12.0/research/slim) to categorize contents and use its content retention to indicate the retention of the content. 
-
-This is our results compared with other methods:
-
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure3.png)
-![image](https://github.com/qiudanWang/LMLP/blob/main/img/Figure4.png)
-
 
 
 
