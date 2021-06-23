@@ -52,7 +52,7 @@ latent_code_arr = np.array(latent_code_arr)
 
 chosen_num_or_ratio = positive_num / len(latent_code_arr)
 
-boundary, constant, a, b = train_boundary(
+boundary, constant = train_boundary(
     latent_codes=latent_code_arr,
     chosen_num_or_ratio=chosen_num_or_ratio,
     scores=scores)
