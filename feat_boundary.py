@@ -46,7 +46,6 @@ for style_path in [ style_dir / style_name, "data/boundary/real_images/" ]:
     scores = style_score if (scores is None) else np.append(scores, style_score, axis=0)
 
 latent_code_arr = np.array(latent_code_arr)
-print(latent_code_arr.shape)
 
 chosen_num_or_ratio = positive_num / len(latent_code_arr)
 
