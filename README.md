@@ -82,4 +82,7 @@ python feat_boundary.py
 
 ## Evaluation
 
+https://github.com/CompVis/adaptive-style-transfer
+
+https://github.com/tensorflow/models/tree/v1.12.0/research/slim
 
