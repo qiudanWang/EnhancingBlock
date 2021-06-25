@@ -6,7 +6,7 @@ import torch.nn as nn
 from PIL import Image
 from torchvision import transforms
 
-import utils.net
+from utils import net
 
 def image_transform():
     transform_list = [

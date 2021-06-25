@@ -1,8 +1,6 @@
 # pytorch-LMLR
 This is an official pytorch implementation of a paper, LMLR: Manipulating Image StyleTransformation via Latent-Space SVM. 
 
-![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure0.png)
-
 # Requirements
 Please install requirements by pip install -r requirements.txt
 
@@ -24,7 +22,7 @@ Use --content and --style to provide the respective path to the content and styl
 ```
 python test.py \
    --lamda 1.0 \
-   --crop \
+   --crop true \
    --content_size 256 \
    --style_size 256 \
    --content data/content \
@@ -53,9 +51,6 @@ python test.py \
 
 --constant: File path to the constant.
 
-This is an example of modifying the value of lamda:
-
-![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure1.png)
 
 ## Train
 
@@ -77,7 +72,7 @@ Use --style_dir and --content_dir to provide the respective directory to the pos
 python feat_boundary.py \
   --artist vincent-van-gogh \
   --style_dir data/boundary/vincent-van-gogh \
-  --content_dir data/boundary/real_images
+  --content_dir data/boundary/real_images/
 ```
 
 ## Evaluation

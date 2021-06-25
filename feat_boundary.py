@@ -29,7 +29,7 @@ latent_code_arr = []
 scores = None
 positive_num = 0
 
-for style_path in [ style_dir , content_dir]:
+for style_path in [ style_dir / artist, content_dir]:
     print("Process %s" % style_path)
     style_path = Path(style_path)
     latent_code_dir = style_path / 'images' / 'feat_map'

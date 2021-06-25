@@ -9,7 +9,7 @@ from PIL import Image
 from torchvision import transforms
 from torchvision.utils import save_image
 
-import utils.net
+from utils import net
 from utils.function import adaptive_instance_normalization, coral
 
 
