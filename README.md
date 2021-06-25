@@ -24,7 +24,7 @@ Use --content and --style to provide the respective path to the content and styl
 ```
 python test.py \
    --lamda 1.0 \
-   --crop true \
+   --crop \
    --content_size 256 \
    --style_size 256 \
    --content data/content \
