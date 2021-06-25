@@ -4,9 +4,8 @@ This is an official pytorch implementation of a paper, LMLR: Manipulating Image 
 # Requirements
 Please install requirements by pip install -r requirements.txt
 
-Python 3.5+
-PyTorch 0.4+
-TorchVision
+Python 3.8.5
+PyTorch 1.4.0
 tqdm
 
 # Usage
