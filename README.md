@@ -11,10 +11,10 @@ tqdm
 
 # Usage
 ## Download data
-Download [data](https://drive.google.com/drive/folders/1CCw_qPXj1VYtglA4PFD0GyBXwLqJ1tIg?usp=sharing) and put them under data/.
+Hide the link for paper review
 
 ## Download models
-Download [model](https://drive.google.com/drive/folders/10OF80ukTP4GOgpV2kIlmcHCh_P8xw-dG?usp=sharing) and put them under models/.
+Hide the link for paper review
 
 ## Test
 Use --content and --style to provide the respective path to the content and style image directory.
