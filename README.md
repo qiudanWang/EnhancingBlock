@@ -22,16 +22,16 @@ Download [model](https://drive.google.com/drive/folders/10OF80ukTP4GOgpV2kIlmcHC
 Use --content and --style to provide the respective path to the content and style image directory.
 
 ```
-python test.py 
-   --lamda 1.0 
-   --crop true
-   --content_size 256 
-   --style_size 256 
-   --content data/content 
-   --style data/style/vincent-van-gogh 
-   --output data/output/vincent-van-gogh 
-   --normal_vector data/boundary/vincent-van-gogh/boundary.npy 
-   --constant data/boundary/vincent-van-gogh/constant.npy 
+python test.py \
+   --lamda 1.0 \
+   --crop true \
+   --content_size 256 \
+   --style_size 256 \
+   --content data/content \
+   --style data/style/vincent-van-gogh \
+   --output data/output/vincent-van-gogh \
+   --normal_vector data/boundary/vincent-van-gogh/boundary.npy \
+   --constant data/boundary/vincent-van-gogh/constant.npy \
    --artist vincent-van-gogh
 ```
 
@@ -66,18 +66,18 @@ Use --image_dir and --output_dir to provide the respective directory to the imag
 rm -rf data/boundary/vincent-van-gogh/images/list.txt
 rm -rf data/boundary/vincent-van-gogh/images/feat_map
 
-python feat.py
-  --style_dir data/boundary/vincent-van-gogh/images/ 
-  --output_dir data/boundary/vincent-van-gogh/images/feat_map/
+python feat.py \
+  --style_dir data/boundary/vincent-van-gogh/images \
+  --output_dir data/boundary/vincent-van-gogh/images/feat_map
 ```
 
 ### Step two: feed latent representations into SVM classifiers
 Use --style_dir and --content_dir to provide the respective directory to the positive and negative samples.
 ```
-python feat_boundary.py 
-  --artist vincent-van-gogh 
-  --style_dir data/boundary/vincent-van-gogh/
-  --content_dir data/boundary/real_images/
+python feat_boundary.py \
+  --artist vincent-van-gogh \
+  --style_dir data/boundary/vincent-van-gogh \
+  --content_dir data/boundary/real_images
 ```
 
 ## Evaluation
