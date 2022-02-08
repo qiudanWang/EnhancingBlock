@@ -10,13 +10,12 @@ tqdm
 
 # Usage
 
-```
 ## Download data
 Hide the link for paper review
 
 ## Download models
 Hide the link for paper review
-```
+
 
 ## Test
 Use --content and --style to provide the respective path to the content and style image directory.
