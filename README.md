@@ -1,5 +1,9 @@
 # pytorch-LMLR
 This is an official pytorch implementation of a paper, LMLR: Manipulating Image StyleTransformation via Latent-Space SVM. 
+## The Comparison of LMLR and Others 
+![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure0.png)
+## The Style Manipulate By Using LMLR
+![image](https://github.com/qiudanWang/LMLR/blob/main/img/Figure1.png)
 
 # Requirements
 Please install requirements by pip install -r requirements.txt
